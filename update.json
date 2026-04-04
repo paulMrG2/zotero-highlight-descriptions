@@ -1,7 +1,12 @@
 {
   "addons": {
     "highlightdescriptions@paulmrg2": {
-      "updates": []
+      "updates": [
+        {
+          "version": "1.0.0",
+          "update_link": "https://github.com/paulmrg2/zotero-highlight-descriptions/releases/download/v1.0.0/highlight-descriptions.xpi"
+        }
+      ]
     }
   }
 }
