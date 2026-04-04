@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      attestations: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v5
+        with:
+          version: 10.30.3
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install
+
+      - name: Sync version into manifest.json
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          node -e "
+            const fs = require('fs');
+            const m = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+            m.version = '$VERSION';
+            fs.writeFileSync('manifest.json', JSON.stringify(m, null, 2) + '\n');
+          "
+
+      - run: pnpm package
+
+      - name: Generate SHA256 checksum
+        run: sha256sum highlight-descriptions.xpi > highlight-descriptions.xpi.sha256
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v4.1.0
+        with:
+          subject-path: highlight-descriptions.xpi
+
+      - name: Update update.json
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          node -e "
+            const fs = require('fs');
+            const u = JSON.parse(fs.readFileSync('update.json', 'utf8'));
+            u.addons['highlightdescriptions@paulmrg2'].updates.unshift({
+              version: '$VERSION',
+              update_link: 'https://github.com/paulmrg2/zotero-highlight-descriptions/releases/download/${GITHUB_REF_NAME}/highlight-descriptions.xpi'
+            });
+            fs.writeFileSync('update.json', JSON.stringify(u, null, 2) + '\n');
+          "
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add update.json
+          git commit -m "Release $GITHUB_REF_NAME"
+          git push origin HEAD:main
+
+      - uses: softprops/action-gh-release@v2.6.1
+        with:
+          files: |
+            highlight-descriptions.xpi
+            highlight-descriptions.xpi.sha256

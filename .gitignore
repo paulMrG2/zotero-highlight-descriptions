@@ -1,0 +1,13 @@
+# ide
+.idea
+.vscode
+
+# code style
+.editorconfig
+
+# modules
+node_modules/
+
+# generated
+chrome/content/index.js
+*.xpi

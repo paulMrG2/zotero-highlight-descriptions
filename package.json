@@ -1,0 +1,18 @@
+{
+  "name": "zotero-highlight-descriptions",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "tsc",
+    "package": "tsc && zip -r highlight-descriptions.xpi manifest.json bootstrap.js prefs.js chrome/content/index.js chrome/content/preferences.xhtml chrome/content/icons/icon48.png"
+  },
+  "devDependencies": {
+    "typescript": "6.0.2",
+    "zotero-types": "4.1.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "pdfjs-dist"
+    ]
+  }
+}

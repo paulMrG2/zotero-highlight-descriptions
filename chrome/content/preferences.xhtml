@@ -1,0 +1,22 @@
+<groupbox
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  onload="Zotero.HighlightDescriptionsPrefs.init(document)"
+>
+  <html:p style="margin: 0 0 12px 0; color: var(--zotero-secondary-text-color);">
+    Customise the label shown next to each highlight color in the annotation context menu.
+  </html:p>
+
+  <html:div style="margin: 0 0 16px 0;">
+    <html:label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+      <html:input type="checkbox" id="hcd-vertical-popup" />
+      Show color descriptions in text selection popup (vertical layout)
+    </html:label>
+  </html:div>
+
+  <html:div id="hcd-color-rows" style="display: grid; grid-template-columns: 28px 1fr; gap: 8px 12px; align-items: center;"/>
+
+  <html:p style="margin: 12px 0 0 0; font-size: 0.85em; color: var(--zotero-secondary-text-color);">
+    Changes take effect the next time a context menu is opened. Clear a field to restore its default.
+  </html:p>
+</groupbox>
