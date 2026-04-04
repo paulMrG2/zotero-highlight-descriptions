@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Zotero: Highlight color descriptions",
-  "version": "1.0.0",
+  "name": "Highlight color descriptions",
+  "version": "1.1.0",
   "description": "Adds custom description labels to highlight colors in Zotero context menus.",
   "author": "Paul Groth",
   "icons": {
