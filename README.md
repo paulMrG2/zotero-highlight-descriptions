@@ -47,18 +47,6 @@ This confirms the `.xpi` was built directly from the source code in this reposit
 
 ![](/docs/screenshots/highlight-color-settings.png)
 
-### Default labels
-| Color | Default                     |
-|---|-----------------------------|
-| 🟡 Yellow | Important/interesting       |
-| 🔴 Red | Disagree/sceptical          |
-| 🟢 Green | Agree/resonate              |
-| 🔵 Blue | Reference to another source |
-| 🟣 Purple | Confused/have questions     |
-| 🟤 Magenta | Chapter/heading             |
-| 🟠 Orange | Definition                  |
-| ⚪ Gray | -                           |
-
 ## Can use as part of a Zotero > Obsidian workflow
 This plugin can be used alongside [Better Notes for Zotero](https://github.com/windingwind/zotero-better-notes), which syncs your Zotero annotations to Obsidian. When your highlight colors have meaningful labels, those labels can be surfaced in Obsidian to give your annotations context at a glance. I plan on posting my full Zotero > Better Notes (templates) > Obsidian (labelling and styling for source notes and highlights) workflow when I find the time (let me know if you're interested).
 
@@ -76,6 +64,3 @@ pnpm package
 
 ## Contributing
 Bug reports and pull requests are welcome. Please open an issue first for significant changes.
-
-## License
-MIT
