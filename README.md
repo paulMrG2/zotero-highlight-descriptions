@@ -1,6 +1,6 @@
 # Zotero Highlight Color Descriptions
 
-A [Zotero 8](https://www.zotero.org/) plugin that adds meaningful highlight color labels ("Important", "Disagree", etc.) throughout the readers.
+A [Zotero](https://www.zotero.org/) plugin that adds meaningful highlight color labels ("Important", "Disagree", etc.) throughout the readers.
 
 ![](/docs/screenshots/highlight-color-descriptions-1.png)
 ![](/docs/screenshots/highlight-color-descriptions-2.png)
@@ -11,13 +11,14 @@ A [Zotero 8](https://www.zotero.org/) plugin that adds meaningful highlight colo
   - in the text selection popup (when creating new highlights)
   - in the toolbar color picker (for freehand notes)
 - Labels are fully customisable in Zotero's plugin settings
+- Reorder the labels to your liking
 - Uninstalling the plugin cleanly removes all stored preferences, leaving the original colors as they were
 
 ## Requirements
 - Zotero 8.0 or later
 
 ## Installation
-1. Download `highlight-descriptions.xpi` from the [latest release](https://github.com/paulmrg2/zotero-highlight-descriptions/releases/latest)
+1. Download `highlight-descriptions-X.X.X.xpi` from the [latest release](https://github.com/paulmrg2/zotero-highlight-descriptions/releases/latest)
 2. In Zotero, go to `Tools > Plugins`
 3. Click the gear icon and choose `Install Plugin From File…`
 4. Select the downloaded `.xpi` file
@@ -28,13 +29,13 @@ Zotero will check for updates automatically.
 Each release includes a SHA256 checksum file. To verify:
 
 ```
-sha256sum -c highlight-descriptions.xpi.sha256
+sha256sum -c highlight-descriptions-X.X.X.xpi.sha256
 ```
 
 You can also verify the build provenance attestation using the GitHub CLI:
 
 ```
-gh attestation verify highlight-descriptions.xpi --repo paulmrg2/zotero-highlight-descriptions
+gh attestation verify highlight-descriptions-X.X.X.xpi --repo paulmrg2/zotero-highlight-descriptions
 ```
 
 This confirms the `.xpi` was built directly from the source code in this repository by GitHub Actions, and has not been tampered with.
@@ -44,6 +45,7 @@ This confirms the `.xpi` was built directly from the source code in this reposit
 2. Select `Highlight Descriptions` in the sidebar
 3. Edit the label for each color (try to keep them short and memorable)
 4. Clear a field to restore its default label
+5. Reorder the labels using the drag handles (click and drag the three vertical dots next to each label)
 
 ![](/docs/screenshots/highlight-color-settings.png)
 

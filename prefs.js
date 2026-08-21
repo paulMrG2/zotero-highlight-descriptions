@@ -1,5 +1,8 @@
-// Default descriptions for the 8 standard Zotero highlight colors.
-// Keys use the hex color without the leading '#', lowercased.
+/**
+ * # Default descriptions for the 8 standard Zotero highlight colors
+ *
+ * Keys use the hex color without the leading '#', lowercased.
+ */
 pref("extensions.highlightdescriptions.color_ffd400", "Important/interesting");
 pref("extensions.highlightdescriptions.color_ff6666", "Disagree/sceptical");
 pref("extensions.highlightdescriptions.color_5fb236", "Agree/resonate");
@@ -8,4 +11,13 @@ pref("extensions.highlightdescriptions.color_a28ae5", "Confused/have questions")
 pref("extensions.highlightdescriptions.color_e56eee", "Chapter/heading");
 pref("extensions.highlightdescriptions.color_f19837", "Definition");
 pref("extensions.highlightdescriptions.color_aaaaaa", "-");
+
+/**
+ * # Order of the color rows in the context modal
+ */
+pref("extensions.highlightdescriptions.color_order", "");
+
+/**
+ * # Use vertical popup for color selection
+ */
 pref("extensions.highlightdescriptions.selection_popup_vertical", true);
