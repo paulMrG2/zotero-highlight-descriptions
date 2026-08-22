@@ -49,6 +49,13 @@ function shutdown(data, reason) {
   }
 }
 
+/**
+ * Uninstall hook
+ *
+ * This runs for all uninstalls, AND updates.
+ * @param data
+ * @param reason
+ */
 function uninstall(data, reason) {
   if (reason === ADDON_UNINSTALL) {
     try {
