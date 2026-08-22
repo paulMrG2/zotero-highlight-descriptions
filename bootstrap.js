@@ -50,8 +50,9 @@ function shutdown(data, reason) {
 }
 
 function uninstall(data, reason) {
-  const prefBranch = "extensions.highlightdescriptions.";
-  try {
-    Services.prefs.getBranch(prefBranch).deleteBranch("");
-  } catch (e) {}
+  if (reason === ADDON_UNINSTALL) {
+    try {
+      Services.prefs.getBranch("extensions.highlightdescriptions.").deleteBranch("");
+    } catch (e) {}
+  }
 }
